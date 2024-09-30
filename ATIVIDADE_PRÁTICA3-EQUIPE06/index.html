@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+
+    <link rel="stylesheet" href="style.css">
+
+<body>
+
+    <div class="container">
+
+    <h1>Escolha uma ação</h1>
+    <h2>Informações</h2>
+
+    <button onclick="spreadInObject()">Spread em Objeto</button>
+    <button onclick="spreadInArray()">Spread em Array</button>
+
+    <div id="output" class="output"></div>
+
+    <script>
+    // Função para realizar o spread em um objeto
+    function spreadInObject() {
+        const obj1 = { nome: "Duda", idade: 17 };
+        const obj2 = { cidade: "Campo Largo", profissão: "Estudante" };
+        const resultado = { ...obj1, ...obj2 };
+        
+        document.getElementById('output').textContent = `Resultado do Spread em Objeto: ${JSON.stringify(resultado)}`;
+        console.log(resultado)
+    }
+
+    // Função para realizar o spread em um array
+    function spreadInArray() {
+        const arr1 = [1, 2, 3];
+        const arr2 = [4, 5, 6];
+        const resultado = [...arr1, ...arr2];
+        
+        document.getElementById('output').textContent = `Resultado do Spread em Array: [${resultado.join(', ')}]`;
+    }
+</script>
+    
+</body>
+</html>
